@@ -29,7 +29,7 @@ public class ConsumeWebService {
       HttpEntity<String> entity = new HttpEntity<String>(headers);
       
       return restTemplate.exchange(
-         "http://localhost:9091/messages", HttpMethod.GET, entity, String.class).getBody();
+         "https://chit-chat-115.herokuapp.com/messages", HttpMethod.GET, entity, String.class).getBody();
    }
    @RequestMapping(value = "/template/messages", method = RequestMethod.POST)
    public String createMessages(@RequestBody Message message) {
@@ -38,7 +38,7 @@ public class ConsumeWebService {
       HttpEntity<Message> entity = new HttpEntity<Message>(message,headers);
       
       return restTemplate.exchange(
-         "http://localhost:9091/messages", HttpMethod.POST, entity, String.class).getBody();
+         "https://chit-chat-115.herokuapp.com/messages", HttpMethod.POST, entity, String.class).getBody();
    }
    @RequestMapping(value = "/template/messages/{id}", method = RequestMethod.PUT)
    public String updateMessage(@PathVariable("id") String id, @RequestBody Message message) {
@@ -47,7 +47,7 @@ public class ConsumeWebService {
       HttpEntity<Message> entity = new HttpEntity<Message>(message,headers);
       
       return restTemplate.exchange(
-         "http://localhost:9091/messages/"+id, HttpMethod.PUT, entity, String.class).getBody();
+         "https://chit-chat-115.herokuapp.com/messages/"+id, HttpMethod.PUT, entity, String.class).getBody();
    }
    @RequestMapping(value = "/template/messages/{id}", method = RequestMethod.DELETE)
    public String deleteMessage(@PathVariable("id") String id) {
@@ -56,6 +56,6 @@ public class ConsumeWebService {
       HttpEntity<Message> entity = new HttpEntity<Message>(headers);
       
       return restTemplate.exchange(
-         "http://localhost:9091/messages/"+id, HttpMethod.DELETE, entity, String.class).getBody();
+         "https://chit-chat-115.herokuapp.com/messages/"+id, HttpMethod.DELETE, entity, String.class).getBody();
    }
 }
