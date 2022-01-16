@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 @RestController
 @SpringBootApplication
 @EnableScheduling
-@EnableEurekaClient
 public class ChitchatApplication {
 	private static final Logger logger = LoggerFactory.getLogger(ChitchatApplication.class);
    
